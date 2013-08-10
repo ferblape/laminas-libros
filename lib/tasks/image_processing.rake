@@ -5,12 +5,12 @@ Bundler.require
 
 namespace :images do
   desc 'Create thumbnails of a maximum width of 1024'
-  task :create_big_thubmnails do
+  task :create_big_thumbnails do
     width = 1024
 
     Dir.glob('content/**/*.jpg').each do |image_path|
-      next if image_path.include?('/home.jpg') ||
-              image_path =~ /_big_thumbnail\.jpg$/ ||
+      next if image_path.include?('/front.jpg') ||
+              image_path =~ /thumbnail\.jpg$/ ||
               image_path.include?('/home/')
 
       img = ::MiniMagick::Image.open(image_path)
@@ -24,6 +24,24 @@ namespace :images do
       putc '.'
     end
   end
+
+  desc 'Create thumbnails of a maximum width of 500'
+  task :create_small_thumbnails do
+    width = 500
+
+    Dir.glob("content/**/*_big_thumbnail.jpg").each do |image_path|
+      img = ::MiniMagick::Image.open(image_path)
+      img.resize "#{width}x"
+      img.strip
+
+      base_name = File.basename(image_path, File.extname(image_path))
+      destination_path = File.dirname(image_path) + '/' + base_name + "_small_thumbnail.jpg"
+
+      img.write(destination_path)
+      putc '.'
+    end
+  end
+
 
   desc 'Create front images'
   task :create_front_images do

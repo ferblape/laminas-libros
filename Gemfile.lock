@@ -5,8 +5,15 @@ GEM
       rack (>= 1.0.0)
     coderay (1.0.9)
     colored (1.2)
+    columnize (0.3.6)
     cri (2.3.0)
       colored (>= 1.2)
+    debugger (1.6.1)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     ffi (1.9.0)
     formatador (0.2.4)
     guard (1.8.2)
@@ -47,6 +54,7 @@ PLATFORMS
 
 DEPENDENCIES
   adsf
+  debugger
   guard-nanoc
   mini_magick
   nanoc

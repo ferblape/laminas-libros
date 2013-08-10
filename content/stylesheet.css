@@ -16,6 +16,10 @@ a:hover {
   text-decoration: underline;
 }
 
+h2 {
+  margin: 0;
+}
+
 .header .pure-menu {
   margin-bottom: 2em;
   background: rgb(28, 28, 37); /* bluish grey */
@@ -28,10 +32,6 @@ a:hover {
 
 .header .pure-menu a:hover {
   color: #aaa;
-}
-
-.l-box {
-  padding: 0.1em 0.5em;
 }
 
 .photo-box, .text-box {
@@ -79,6 +79,7 @@ a:hover {
 .catalog .text-box {
   height: 159px;
   background: #fff;
+  margin-bottom: 40px;
 }
 
 .text-box {
@@ -137,10 +138,10 @@ a:hover {
 
 .catalog {
   background: #fff;
+  padding-left: 1.5em;
 }
 
 .print-box {
-  padding: 1.5em;
   overflow: hidden;
   position: relative;
   height: 450px;
@@ -156,7 +157,6 @@ a:hover {
   color: #333;
   font-weight: bold;
 }
-
 
 .print-box p, ul li {
   letter-spacing: 0em;
@@ -192,3 +192,14 @@ a:hover {
   text-align: center;
   color: #333;
 }
+
+.single-print-box {
+  max-height: 650px;
+  min-height: 550px;
+}
+
+.single-print-box img {
+  min-width: 500px;
+  max-width: 550px;
+}
+

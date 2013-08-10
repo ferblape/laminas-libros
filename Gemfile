@@ -6,3 +6,7 @@ gem 'nanoc'
 gem 'adsf'
 gem 'guard-nanoc'
 gem 'mini_magick'
+
+group :development do
+  gem 'debugger'
+end
