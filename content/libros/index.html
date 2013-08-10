@@ -1,3 +1,25 @@
 ---
 title: Libros
 ---
+
+<div class="pure-g-r catalog">
+  <div class="pure-u-1-1 text-box">
+    <div class="l-box">
+      <h1 class="text-box-head">Libros</h1>
+      <p class="text-box-subhead"></p>
+    </div>
+  </div>
+
+  <% DB.books.each do |key, data| %>
+  <div class="pure-u-1-1 print-box">
+    <a href="/libros/<%= key %>/">
+      <img src="/libros/<%= key %>/front.jpg" alt="<%= data[:title] %>">
+    </a>
+
+    <aside class="print-box-caption">
+    <h2><a href="/libros/<%= key %>/"><%= data[:title] %></a></h2>
+      <%= data[:short_description] %>
+    </aside>
+  </div>
+  <% end %>
+</div>

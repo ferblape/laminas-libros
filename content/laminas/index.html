@@ -1,3 +1,25 @@
 ---
 title: Láminas
 ---
+
+<div class="pure-g-r catalog">
+  <div class="pure-u-1-1 text-box">
+    <div class="l-box">
+      <h1 class="text-box-head">Láminas</h1>
+      <p class="text-box-subhead">Michavila, Pedro Cámara, Genaro Lahuerta, Salvatierra, Progreso...</p>
+    </div>
+  </div>
+
+  <% DB.prints.each do |key, data| %>
+  <div class="pure-u-1-1 print-box">
+    <a href="/laminas/<%= key %>/">
+      <img src="/laminas/<%= key %>/front.jpg" alt="<%= data[:title] %>">
+    </a>
+
+    <aside class="print-box-caption">
+    <h2><a href="/laminas/<%= key %>/"><%= data[:title] %></a></h2>
+      <%= data[:short_description] %>
+    </aside>
+  </div>
+  <% end %>
+</div>

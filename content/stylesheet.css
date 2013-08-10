@@ -1,101 +1,184 @@
 * {
   margin: 0;
   padding: 0;
-
-  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
 }
 
 body {
   background: #fff;
+  color: #000;
 }
 
-a {
+.header .pure-menu {
+  margin-bottom: 2em;
+  background: rgb(28, 28, 37); /* bluish grey */
+  color: #fff;
+}
+
+.header .pure-menu a{
+  color: #fff;
+}
+
+.header .pure-menu a:hover {
+  color: #aaa;
+}
+
+.l-box {
+  padding: 0.1em 0.5em;
+}
+
+.photo-box, .text-box {
+  overflow: hidden;
+  position: relative;
+  height: 250px;
+}
+
+
+.photo-box img {
+  min-height: 250px;
+  width: 100%;
+}
+
+.photo-box aside {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em 0.5em;
+  color: white;
+  width: 100%;
+  font-size: 80%;
+  text-align: right;
+  background: -moz-linear-gradient(top,  rgba(16,27,30,0) 0%, rgba(12,2,2,1) 90%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,27,30,0)), color-stop(90%,rgba(12,2,2,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00101b1e', endColorstr='#0c0202',GradientType=0 ); /* IE6-9 */
+
+}
+
+.photo-box aside span {
+  color: #aaa;
+}
+
+.photo-box aside span a {
+  color: #ccc;
   text-decoration: none;
 }
 
-a:link,
-a:visited {
-  color: #f30;
+.catalog .text-box {
+  height: 159px;
+  background: #fff;
 }
 
-a:hover {
-  color: #f90;
+.text-box {
+  color: rgb(133, 154, 238); /* steel blue */
+  letter-spacing: -0.1em;
 }
 
-#main {
-  position: absolute;
-
-  top: 40px;
-  left: 280px;
-
-  width: 500px;
+.text-box-head {
+  color: rgb(28, 28, 37); /* bluish grey */
+  border-bottom: 2px solid rgb(43, 43, 58);
+  padding-bottom: 0.2em;
 }
 
-#main h1 {
-  font-size: 40px;
+.text-box-subhead {
   font-weight: normal;
-
-  line-height: 40px;
-
-  letter-spacing: -1px;
+  font-size: 150%;
 }
 
-#main p {
-  margin: 20px 0;
-
-  font-size: 15px;
-
-  line-height: 20px;
+.form-box {
+  text-align: center;
+  font-size: 120%;
+  border-bottom: 1px solid #eee;
 }
 
-#main ul, #main ol {
-  margin: 20px;
+.form-box .pure-button {
+  background-color: #61B842;
+  color: white;
+  vertical-align: top;
+  font-size: 85%;
+  font-weight: bold;
+  text-shadow: 0px 1px 1px rgb(35, 111, 31);
+  border-radius: 4px;
 }
 
-#main li {
-  font-size: 15px;
-
-  line-height: 20px;
+.footer {
+  background: #111;
+  color: #666;
+  text-align: center;
+  padding: 1em;
+  font-size: 80%;
 }
 
-#main ul li {
-  list-style-type: square;
+@media (max-width: 767px) {
+  .photo-box, .text-box {
+    text-align: center;
+  }
+
+  .photo-box img {
+    width: 100%;
+  }
+
+  .text-box {
+    height: auto;
+  }
 }
 
-#sidebar {
-  position: absolute;
-
-  top: 40px;
-  left: 20px;
-  width: 200px;
-
-  padding: 20px 20px 0 0;
-
-  border-right: 1px solid #ccc;
-
-  text-align: right;
+.catalog {
+  background: #fff;
 }
 
-#sidebar h2 {
-  text-transform: uppercase;
+.print-box {
+  padding: 1.5em;
+  overflow: hidden;
+  position: relative;
+  height: 450px;
+  letter-spacing: -0.1em;
+}
 
-  font-size: 13px;
+.print-box h2 {
+  letter-spacing: -0.1em;
+}
 
+.print-box h2 a {
   color: #333;
-
-  letter-spacing: 1px;
-
-  line-height: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-#sidebar ul {
-  list-style-type: none;
-
-  margin: 20px 0;
+.print-box p, ul li {
+  letter-spacing: 0em;
 }
 
-#sidebar li {
-  font-size: 14px;
+.print-box img {
+  min-height: 250px;
+  max-height: 420px;
+  width: 60%;
+}
 
-  line-height: 20px;
+.print-box aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #434;
+  text-align: left;
+  padding-left: 20px;
+  width: 36%;
+}
+
+.print-box aside span {
+  color: #aaa;
+}
+
+.print-box aside span a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.print-box aside span.separator {
+  margin: 0;
+  font-size: 4em;
+  text-align: center;
+  color: #333;
 }
