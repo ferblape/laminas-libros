@@ -8,6 +8,14 @@ body {
   color: #000;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .header .pure-menu {
   margin-bottom: 2em;
   background: rgb(28, 28, 37); /* bluish grey */
@@ -32,6 +40,9 @@ body {
   height: 250px;
 }
 
+.text-box h1 {
+  font-size: 2.5em;
+}
 
 .photo-box img {
   min-height: 250px;
@@ -63,7 +74,6 @@ body {
 
 .photo-box aside span a {
   color: #ccc;
-  text-decoration: none;
 }
 
 .catalog .text-box {
@@ -138,14 +148,15 @@ body {
 }
 
 .print-box h2 {
-  letter-spacing: -0.1em;
+  letter-spacing: -0.05em;
+  font-size: 2em;
 }
 
 .print-box h2 a {
   color: #333;
-  text-decoration: none;
   font-weight: bold;
 }
+
 
 .print-box p, ul li {
   letter-spacing: 0em;
@@ -173,7 +184,6 @@ body {
 
 .print-box aside span a {
   color: #ccc;
-  text-decoration: none;
 }
 
 .print-box aside span.separator {
