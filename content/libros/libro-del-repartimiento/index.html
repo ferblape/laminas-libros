@@ -1,0 +1,84 @@
+<% 
+  key = @item.path.split('/').last
+  folder = @item.path.split('/')[1]
+  data = if folder == 'laminas'
+    DB.prints[key]
+  else
+    DB.books[key]
+  end
+%>
+
+<% content_for :title do %>
+  <%= data[:title] %>
+<% end %>
+
+<div class="pure-g-r catalog">
+  <div class="pure-u-1-1 text-box">
+    <h1 class="text-box-head"><%= data[:title] %></h1>
+    <%= data[:short_description] %>
+  </div>
+
+  <% ImageManagement.get_images(@item).each_with_index do |image, i| %>
+  <div class="pure-u-1-2 single-print-box">
+    <div class="image-container">
+      <img src="<%= image[0] %>" />
+      <span class="zoom_link">Ampliar</span>
+    </div>
+  </div>
+  <% end %>
+
+  <% if ImageManagement.get_documents(@item).any? %>
+    <div class="pure-u-1-1 text-box">
+      <h2 class="text-box-head">Documentos</h2>
+      <p>Documentos del notario probando la autenticidad de la obra.</p>
+    </div>
+
+    <% ImageManagement.get_documents(@item).each_with_index do |image, i| %>
+      <div class="pure-u-1-2 single-print-box">
+        <div class="image-container">
+          <img src="<%= image[0] %>" />
+          <span class="zoom_link">Ampliar</span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="ui-widget-overlay" style="display:none"></div>
+
+<div class="photo_zoom" style="display:none">
+  <input type="hidden" id="images_original_sizes" data-images="<%= ImageManagement.get_big_pictures_height(@item).join(",") %>" />
+  <input type="hidden" id="images_original_urls" data-images="<%= ImageManagement.get_all_pictures(@item).map(&:last).join(",") %>" />
+  <input type="hidden" id="images_thumb_size" data-images="<%= ImageManagement.get_all_pictures(@item).map(&:first).join(",") %>" />
+
+  <a href="#" class="photo_zoom_close" title="Cerrar">X</a>
+
+  <div class="photo_zoom_main"></div>
+
+  <a href="#" class="prev">←</a>
+  <a href="#" class="next">→</a>
+
+  <nav class="photo_zoom_gallery">
+    <ul>
+      <% ImageManagement.get_all_pictures(@item).each do |image| %>
+        <li><a href="#"><img src="<%= image[0] %>" /></li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      console.log("1");
+    var imagesOriginalSizes = $('#images_original_sizes').data('images')
+    if(imagesOriginalSizes.length > 1){
+      imagesOriginalSizes = imagesOriginalSizes.split(',');
+      } else {
+      imagesOriginalSizes = [imagesOriginalSizes];
+    }
+    var imagesOriginalUrls = $('#images_original_urls').data('images').split(',');
+    var imagesThumbSize = $('#images_thumb_size').data('images').split(',');
+    initProductImagesLightbox(imagesOriginalSizes, imagesOriginalUrls, imagesThumbSize);
+  });
+</script>

@@ -35,6 +35,7 @@ namespace :images do
       img.strip
 
       base_name = File.basename(image_path, File.extname(image_path))
+      base_name = base_name.gsub(/_big_thumbnail/, '')
       destination_path = File.dirname(image_path) + '/' + base_name + "_small_thumbnail.jpg"
 
       img.write(destination_path)

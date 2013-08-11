@@ -93,7 +93,7 @@ HTML
 <p>Facsímil</p>
 HTML
       },
-      "joan-roiç-de-corella" => {
+      "joan-roig-de-corella" => {
         :title => "Obres de Joan Roiç de Corella",
         :short_description => <<-HTML
 <p>Facsímil</p>
