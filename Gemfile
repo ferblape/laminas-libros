@@ -6,6 +6,7 @@ gem 'nanoc'
 gem 'adsf'
 gem 'guard-nanoc'
 gem 'mini_magick'
+gem 'systemu'
 
 group :development do
   gem 'debugger'
