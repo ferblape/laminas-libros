@@ -81,7 +81,7 @@ HTML
   def self.books
     {
       "brevari-d-amor" => {
-        :title => "Brevai d'amor",
+        :title => "Breviari d'amor",
         :short_description => <<-HTML
 <p>Facsímil. Dos tomos. Ejemplar 110 / 300</p>
 HTML
