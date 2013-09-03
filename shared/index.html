@@ -1,4 +1,4 @@
-<% 
+<%
   key = @item.path.split('/').last
   folder = @item.path.split('/')[1]
   data = if folder == 'laminas'
@@ -10,6 +10,14 @@
 
 <% content_for :title do %>
   <%= data[:title] %>
+<% end %>
+
+<% content_for :description do %>
+  <%= data[:title] + " - Venta de " + (folder == 'laminas' ? 'Láminas' : 'Libros') %>
+<% end %>
+
+<% content_for :keywords do %>
+  <%= data[:keywords] %>
 <% end %>
 
 <div class="pure-g-r catalog">
@@ -61,7 +69,7 @@
   <nav class="photo_zoom_gallery">
     <ul>
       <% ImageManagement.get_all_pictures(@item).each do |image| %>
-        <li><a href="#"><img src="<%= image[0] %>" /></li>
+        <li><a href="#"><img src="<%= image[0] %>" /></a></li>
       <% end %>
     </ul>
   </nav>

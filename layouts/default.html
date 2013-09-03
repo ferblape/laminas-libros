@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content="nanoc <%= Nanoc::VERSION %>" />
   <title><%= title %></title>
+  <meta name="description" content="<%= meta_description %>" />
+  <meta name="keywords" content="<%= meta_keywords %>" />
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css" />
   <link rel="stylesheet" href="/style.css" />
   <script type="text/javascript" src="/javascripts/jquery.js"></script>
@@ -25,6 +27,16 @@
     </div>
 
     <%= yield %>
+
+    <% if @item.path != '/' %>
+      <div class="pure-u-1">
+        <div class="l-box">
+          <p>
+          Si estás interesado ponte en contacto con nosotros en <strong><a mailto="loperferbla@gmail.com">loperferbla@gmail.com</a></strong>.
+          </p>
+        </div>
+      </div>
+    <% end %>
 
     <div class="footer">
     </div>
