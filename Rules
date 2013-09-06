@@ -44,11 +44,7 @@ route '*' do
     item.identifier.chop + '.' + item[:extension]
   else
     # Write item with identifier /foo/ to /foo/index.html
-    if item.identifier.include?('google5898d031880c7c2c')
-      '/google5898d031880c7c2c.html'
-    else
-      item.identifier + 'index.html'
-    end
+    item.identifier + 'index.html'
   end
 end
 
